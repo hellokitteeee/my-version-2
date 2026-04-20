@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <style>
+            body {
+                text-align: center;
+                background-image: linear-gradient(to bottom, rgb(194,116,208), rgb(183, 48, 250));
+            }
+            ol {font-size: 30px;
+            color: rgb(251, 214, 255);}
+            h1 {font-size: 40px;
+            color: azure;}
+            a {text-decoration: none;
+                color: rgb(199, 117, 237);
+                font-weight: 100px;}
+            div {
+                background-color: rgb(161, 37, 198);
+                border: 10px dotted rgb(244, 219, 255);
+                border-radius: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HOW TO PLAY</h1>
+        <div>    
+            <ol>
+                <li>You will be shown multiplication questions with the numbers ranging from 0 to 12</li>
+                <li>Try to answer as many questions you can</li>
+                <li>You will also only have 1 minute to do so</li>
+                <li>Have funnnn!!!!</li>
+                <a href="mainmenu.html">⬅️ go back</a>
+            </ol>
+        </div>
+         <audio id="menumusic" loop>
+        <source src="menumusic.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+            document.body.addEventListener('click', function() {
+                let audio = document.getElementById('menumusic');
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        </script>
+    </body>
+</html>

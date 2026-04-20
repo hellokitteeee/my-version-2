@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <!--super cute google fontsss-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+
+
+
+        <style>
+            body {
+                text-align: center;
+                background-image: linear-gradient(to bottom, rgb(194,116,208), rgb(183, 48, 250));
+                font-family: "Bitcount Grid Double", sans-serif;
+            }
+            
+            a {
+                text-decoration: none;
+                color: white;
+                font-size: 30px;
+                width: 100px;
+                border: 1px solid rgb(144, 73, 202);
+                padding: 5px;
+                margin: 20px;
+                height: 5px;
+                border-radius: 7px;
+            }
+            a:hover {
+                border: 5px dotted rgb(214, 163, 255);
+            }
+            a:focus {
+                border-color: rgb(144, 73, 202);
+                color: rgb(247, 203, 255);
+            }
+            footer {font-size: 40px;}
+
+
+        </style>
+    </head>    
+    <body>
+        <img src = "timestabletitle.png" width = "450"><br>
+        <a href="loadingscreen.html">PLAY</a><br><br>
+        <a href="howtoplay.html">how to play</a><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer>
+            made by <img src="blinkiesCafe-Bn.gif" width="170">
+        </footer>
+        <audio id="menumusic" loop>
+        <source src="menumusic.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+            document.body.addEventListener('click', function() {
+                let audio = document.getElementById('menumusic');
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        </script>
+    </body>
+</html>

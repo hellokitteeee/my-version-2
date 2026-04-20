@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
+
+
+        <style>
+            input {
+                width: 100px;
+                height: 50px;
+                font-size: 20px;
+                background: #c94dfa;
+                border: 5px dotted #caaeff;
+                color: white;
+                border-radius: 10px;
+                text-align: center;
+                transition: 0.3s;
+                height: 25px;
+            }
+            body {
+                display: flex;
+                flex-direction: column; /* Stacks the Row and the Scoreboard */
+                align-items: center;
+                justify-content: flex-start;
+                min-height: 100vh;
+                background-image: linear-gradient(to bottom, rgb(249, 215, 255), rgb(214, 132, 255));
+                margin: 0;
+                padding-top: 20px;
+            }
+            #nextquestiondiv {
+                background-color: rgb(222, 102, 222);
+                border: 3px solid rgb(199, 33, 188);
+                padding: 5px;
+                width: 120px;
+                text-align: center;
+                display: flex;
+                gap: 10px;
+                height: 25px;
+                border-radius: 30px;
+                align-items: center;
+                font-size: 17px;
+            }
+            #title{
+                background-image:url("bubblebackground.png");
+                background-size: 700px;
+                background-position-x: center;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 500px;
+                height: 300px;
+                gap: 2px;
+                padding: 15px;
+                border:6px solid #ff9bfa;
+                border-radius: 40px;
+            }
+            h1{
+                font-size: 70px;
+                margin: 0;
+            }
+            #myquestion{
+                font-size: 100px;
+            }
+            #maingame {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                gap: 30px;
+            }
+            #thetime {
+                font-size: 55px;
+                background-color: #ffdcfd;
+                border-radius: 30px;
+                border: 6px dotted#ff9bfa;font-family: "Bitcount Grid Double", sans-serif;
+                font-weight: 400;
+            }
+            #scoreboard {
+                display: flex;
+                gap:5px;
+                font-size: 60px;
+                margin-top: 0px;
+                font-family: "Bitcount Grid Double", sans-serif;
+                font-weight: 400px;
+            }
+            #myrightorwrongimage {
+                width: 60px;
+            }
+            #countdownoverlay {
+                /* covers screen */
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                
+                 
+                background-color: rgba(0, 0, 0, 0.66); /* Semi-transparent */
+                backdrop-filter: blur(10px);               /* blurs the game screen */
+                -webkit-backdrop-filter: blur(10px);        /* safari support????*/
+                
+                /* centers nums */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                /* sits on top everything */
+                z-index: 9999;
+                
+                /* smooth disappearance */
+                transition: opacity 0.5s ease;
+
+                font-size: 100px;
+                font-family: "Bitcount Grid Double", sans-serif;
+                font-weight: 400;
+
+            }
+            #whatis {
+                font-family: "Bitcount Grid Double", sans-serif;
+                font-weight: 400;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="countdownoverlay">
+            <h1 id="countdown-text">3</h1>
+        </div>
+
+        <div id = "maingame">
+            <div id="title">
+                <h1 id = "whatis">What is..?</h1>
+                <h1 id = "myquestion">QUESTION</h1>
+                <input id = "answer" placeholder="enter"><img src="" id="myrightorwrongimage">
+                <div id = "nextquestiondiv">   
+                    <h2>next:</h2>
+                    <h2 id="nextquestion">2x2</h2>
+                </div>
+            </div>
+            <h2 id= "thetime" >00:00</h2>
+           </div>
+        <br>
+        <div id = "scoreboard"><h2 font-weight = "400">score:</h2><h2 id = "score">0</h2></div>
+        <script src="countdowncode.js"></script>
+        <script src="questioncode.js"></script>
+        
+        <audio id="menumusic" loop>
+        <source src="menumusic.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+            document.body.addEventListener('click', function() {
+                let audio = document.getElementById('menumusic');
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        </script>
+    </body>
+</html>

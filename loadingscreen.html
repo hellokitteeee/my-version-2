@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <style>
+            h1 {color: white;
+            font-size: 50px;
+            align-items: center;
+            justify-content: center;
+        }
+            body { background-color: black;}
+        </style>
+    </head>
+    <body>
+        <h1 id = "loading">loading...</h1>
+        
+        
+        
+        
+        
+        
+        
+        <script>
+            let myload = document.getElementById("loading")
+            function load1(){
+                myload.innerText = "loading..."
+            }
+            function load2(){
+                myload.innerText = "loading.."
+            }
+
+            setTimeout(load1, 500)
+            setTimeout(load2, 1000)
+            setTimeout(load1, 1500)
+            setTimeout(load2, 2000)
+            setTimeout(load1, 2500)
+            setTimeout(load1, 3000)
+
+            setInterval(function(){
+                window.location.href = "game.html"
+            }, 10500)
+            
+        </script>
+         <audio id="menumusic" loop>
+        <source src="menumusic.mp3" type="audio/mpeg">
+        </audio>
+
+        <script>
+            document.body.addEventListener('click', function() {
+                let audio = document.getElementById('menumusic');
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        </script>
+    </body>
+</html>
